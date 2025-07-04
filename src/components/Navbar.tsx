@@ -1,42 +1,45 @@
 "use client"
 import { NAVBAR_LINKS } from '@/constants/navbar'
-import { MapPinned } from 'lucide-react'
-import Image from 'next/image'
+import { ADDRESS, MAILTO, SITE_NAME } from '@/constants/site'
+import { MapPinned, Menu, X } from 'lucide-react'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const Navbar = () => {
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     return (
-        <nav className='w-full h-auto flex flex-row justify-between px-[10%] py-4'>
-            <div className='flex flex-row items-center'>
-                <Image
-                    src="/logonobg.png"
-                    alt="Logo"
-                    width={100}
-                    height={100}
-                />
-                <div className='h-10 w-0.5 bg-gray-300 rounded-full' />
-                <div className='flex flex-col ml-4'>
-                    <h1 className='text-sm font-medium'>Clim Energy 33</h1>
-                    <p className='text-xs text-gray-500 flex flex-row'>Saint-Loubès <MapPinned size={12} /></p>
+        <nav className="w-4/5 h-auto flex flex-col justify-between items-center bg-white shadow-2xl mt-4 p-2 rounded-xl">
+            <div className="w-full flex flex-row items-center justify-between">
+                <div className="flex flex-col ml-4">
+                    <h1 className="text-sm font-medium">{SITE_NAME}</h1>
+                    <p className="text-xs text-gray-500 flex flex-row gap-1">{ADDRESS} <MapPinned size={12} /></p>
+                </div>
+                {/* Desktop links */}
+                <div className="hidden md:flex flex-row items-center gap-9">
+                    {NAVBAR_LINKS.map((link) => (
+                        <Link key={link.label} href={link.href} className="text-sm font-medium text-gray-700 hover:text-gray-900">
+                            {link.label}
+                        </Link>
+                    ))}
+                </div>
+                <div className="flex flex-row items-center gap-2">
+                    <Link href={MAILTO} className="bg-blue-600 text-white text-xs font-semibold px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition-colors w-full text-center">Devis</Link>
+                    <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                        {!isOpen ? <Menu size={30} /> : <X size={30} />}
+                    </button>
                 </div>
             </div>
 
-            <div className='flex flex-row items-center gap-4 mt-4'>
+            {/* Mobile menu */}
+            <div className={`${isOpen ? 'flex' : 'hidden'} md:hidden flex-col items-center gap-4 mt-4 w-full`}>
                 {NAVBAR_LINKS.map((link) => (
-                    <Link key={link.label} href={link.href} className='text-sm font-medium text-gray-700 hover:text-gray-900'>
+                    <Link key={link.label} href={link.href} className="text-sm font-medium text-gray-700 hover:text-gray-900 w-full text-center py-2">
                         {link.label}
                     </Link>
                 ))}
-
-                <button>
-                    Devis gratuit
-                </button>
             </div>
-
         </nav>
     )
 }
