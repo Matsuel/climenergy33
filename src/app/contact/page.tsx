@@ -1,8 +1,11 @@
+import Navbar from '@/components/Navbar'
 import React from 'react'
 
 const ContactPage = () => {
     return (
-        <div>ContactPage</div>
+        <div className="w-full min-h-screen flex flex-col items-center">
+            <Navbar />
+        </div>
     )
 }
 
