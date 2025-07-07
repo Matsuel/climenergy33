@@ -16,15 +16,13 @@ const ContactButton = ({
     content,
     ...props
 }: ContactButtonProps) => {
-    
+
     return (
-        <div className={cn("w-full h-auto flex flex-row gap-2", className)} {...props}>
-            <div className="w-12 h-12 bg-orange hover:bg-white hover:text-orange border-orange border rounded-lg flex items-center justify-center text-white cursor-pointer transition-colors duration-300">
-                {icon}
-            </div>
+        <div className={cn("w-full h-auto flex flex-row items-center gap-2 text-gray-600", className)} {...props}>
+            {icon}
             <div className="w-auto h-auto flex flex-col">
-                <h3 className="text-lg font-semibold">{title}</h3>
-                <p className="text-sm text-gray-500">{content}</p>
+                <h3 className="text-lg font-medium">{title}</h3>
+                <p className="text-sm font-medium">{content}</p>
             </div>
         </div>
     )
