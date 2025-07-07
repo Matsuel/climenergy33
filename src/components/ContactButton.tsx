@@ -23,8 +23,8 @@ const ContactButton = ({
                 {icon}
             </div>
             <div className="w-auto h-auto flex flex-col">
-                <h3 className="text-sm font-semibold">{title}</h3>
-                <p className="text-xs text-gray-500">{content}</p>
+                <h3 className="text-lg font-semibold">{title}</h3>
+                <p className="text-sm text-gray-500">{content}</p>
             </div>
         </div>
     )

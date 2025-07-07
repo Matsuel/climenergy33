@@ -13,9 +13,9 @@ const ContactPage = () => {
             <Navbar />
 
             <div className='w-4/5 h-auto flex flex-row justify-center items-start shadow-2xl bg-white rounded-xl gap-4'>
-                <div className='w-1/2 h-auto p-4 flex flex-col items-start justify-center'>
-                    <h3 className=''>Nous contacter</h3>
-                    <p className='text-sm text-gray-500'>Pour toute demande de devis ou d'informations, n'hésitez pas à nous contacter.</p>
+                <div className='w-1/2 h-auto p-4 flex flex-col items-start justify-center gap-2'>
+                    <h3 className='text-xl font-bold'>Nous contacter</h3>
+                    <p className='text-lg text-gray-500 leading-6'>Pour toute demande de devis ou d'informations, n'hésitez pas à nous contacter en utilisant le formulaire ci-dessous.</p>
 
                     <div className='w-full h-auto bg-background flex flex-col gap-4 p-4 rounded-lg'>
                         <div className='w-full h-auto flex flex-row items-center justify-between gap-4'>
@@ -29,9 +29,9 @@ const ContactPage = () => {
                     </div>
                 </div>
 
-                <div className='w-1/2 h-auto p-4 flex flex-col items-start justify-start'>
-                    <h3 className=''>Nos coordonnées</h3>
-                    <p className='text-sm text-gray-500'>Vous avez une question ? N'hésitez pas à nous contacter :</p>
+                <div className='w-1/2 h-auto p-4 flex flex-col items-start justify-start gap-2'>
+                    <h3 className='text-xl font-bold'>Nos coordonnées</h3>
+                    <p className='text-lg text-gray-500 leading-6'>Vous avez une question ? N'hésitez pas à nous contacter :</p>
 
                     <div className='w-full h-auto flex flex-col gap-4'>
                         {PHONES.map((phone, index) => (
