@@ -19,7 +19,7 @@ const Button = ({
     }
 
     return (
-        <button className={cn(`rounded-lg text-xs font-semibold px-4 py-2 cursor-pointer transition-all duration-300 flex flex-row gap-1 ${variants[variant]}`, className)} {...props}>
+        <button className={cn(`rounded-lg text-xs font-semibold px-4 py-2 cursor-pointer transition-all duration-300 flex flex-row items-center justify-center gap-1 ${variants[variant]}`, className)} {...props}>
             {children}
         </button>
     )
