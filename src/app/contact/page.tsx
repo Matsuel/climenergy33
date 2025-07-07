@@ -17,14 +17,14 @@ const ContactPage = () => {
                     <h3 className='text-xl font-bold'>Nous contacter</h3>
                     <p className='text-lg text-gray-500 leading-6'>Pour toute demande de devis ou d'informations, n'hésitez pas à nous contacter en utilisant le formulaire ci-dessous.</p>
 
-                    <div className='w-full h-auto bg-background flex flex-col gap-4 p-4 rounded-lg'>
+                    <div className='w-full h-auto flex flex-col gap-4 p-4 rounded-lg'>
                         <div className='w-full h-auto flex flex-row items-center justify-between gap-4'>
-                            <Input type="text" placeholder='Nom*' />
-                            <Input type="text" placeholder='Prénom' />
+                            <Input type="text" label='Nom*' />
+                            <Input type="text" label='Prénom' />
                         </div>
-                        <Input type="text" placeholder='Téléphone*' />
-                        <Input type="email" placeholder='Email*' />
-                        <TextArea placeholder='Votre message*' />
+                        <Input type="text" label='Téléphone*' />
+                        <Input type="email" label='Email*' />
+                        <TextArea label='Votre message*' />
                         <Button variant='primary'>Envoyer</Button>
                     </div>
                 </div>
