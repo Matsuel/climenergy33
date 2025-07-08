@@ -48,7 +48,7 @@ const Contact = () => {
                         <Input type="text" label='Téléphone*' />
                         <Input type="email" label='Email*' />
                         <TextArea label='Votre message*' />
-                        <Button variant='primary'>Envoyer</Button>
+                        <Button variant='primary' className='text-sm'>Envoyer</Button>
                     </div>
                 </div>
 
