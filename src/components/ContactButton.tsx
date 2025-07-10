@@ -2,7 +2,6 @@ import { cn } from '@/utils/cn';
 import React from 'react'
 
 interface ContactButtonProps extends React.HTMLAttributes<HTMLDivElement> {
-    children?: React.ReactNode;
     icon: React.ReactNode;
     title: string;
     content: string;

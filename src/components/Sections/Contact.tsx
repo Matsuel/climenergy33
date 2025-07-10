@@ -13,7 +13,7 @@ const Contact = () => {
                     <h3 className='text-5xl font-bold'>Nous contacter</h3>
                     <p className='text-xl text-gray-500 leading-6'>
                         Un problème, une question, une demande de devis ou un renseignement ?
-                        N'hésitez pas à nous contacter, nous sommes là pour vous aider !
+                        N&apos;hésitez pas à nous contacter, nous sommes là pour vous aider !
                     </p>
 
                     <div className='w-full h-auto flex flex-col gap-4'>
