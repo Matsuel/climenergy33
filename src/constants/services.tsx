@@ -9,7 +9,7 @@ export const SERVICES = [
         image: "/images/services/1.jpg",
     },
     {
-        title: "Maintenance et dépannage",
+        title: "Entretien et dépannage",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         icon: <WrenchIcon width={24} height={24} />,
         image: "/images/services/2.jpg",
