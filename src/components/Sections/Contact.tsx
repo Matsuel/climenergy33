@@ -1,11 +1,16 @@
+"use client"
 import Button from '@/components/Button'
 import ContactButton from '@/components/ContactButton'
 import Input from '@/components/Input'
 import TextArea from '@/components/TextArea'
-import { MAIL, PHONES } from '@/constants/site'
+import { MAIL, MAILTO, PHONES } from '@/constants/site'
 import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import { useRouter } from 'next/navigation'
 
 const Contact = () => {
+
+    const router = useRouter();
+
     return (
         <div className='md:w-4/5 w-[90%] h-auto flex lg:flex-row flex-col justify-center items-start rounded-xl gap-4'>
 
@@ -23,12 +28,14 @@ const Contact = () => {
                                 icon={<PhoneIcon width={24} height={24} className='text-gray-400' />}
                                 title="Téléphone"
                                 content={phone}
+                                onClick={() => router.push(`tel:${phone}`)}
                             />
                         ))}
                         <ContactButton
                             icon={<EnvelopeIcon width={24} height={24} className='text-gray-400' />}
                             title="Email"
                             content={MAIL}
+                            onClick={() => router.push(MAILTO)}
                         />
                         <ContactButton
                             icon={<BuildingOffice2Icon width={24} height={24} className='text-gray-400' />}
