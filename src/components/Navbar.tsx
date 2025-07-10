@@ -15,7 +15,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     return (
-        <nav className="w-4/5 h-auto flex flex-col justify-between items-center bg-white shadow-2xl mt-4 p-2 rounded-xl">
+        <nav className="md:w-4/5 w-[90%] h-auto flex flex-col justify-between items-center bg-white shadow-2xl mt-4 p-2 rounded-xl">
             <div className="w-full h-auto flex flex-row items-center justify-between">
                 <div className="flex flex-col ml-4">
                     <h1 className="text-sm font-medium">{SITE_NAME}</h1>

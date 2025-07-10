@@ -7,9 +7,9 @@ import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/2
 
 const Contact = () => {
     return (
-        <div className='w-4/5 h-auto flex flex-row justify-center items-start rounded-xl gap-4'>
+        <div className='md:w-4/5 w-[90%] h-auto flex lg:flex-row flex-col justify-center items-start rounded-xl gap-4'>
 
-                <div className='w-1/2 h-auto p-4 flex flex-col items-start justify-start gap-4'>
+                <div className='w-full lg:w-1/2 h-auto p-4 flex flex-col items-start justify-start gap-4'>
                     <h3 className='text-5xl font-bold'>Nous contacter</h3>
                     <p className='text-xl text-gray-500 leading-6'>
                         Un problème, une question, une demande de devis ou un renseignement ?
@@ -38,7 +38,7 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <div className='w-1/2 h-auto p-4 flex flex-col items-start justify-center gap-2'>
+                <div className='w-full lg:w-1/2 h-auto p-4 flex flex-col items-start justify-center gap-2'>
 
                     <div className='w-full h-auto bg-white flex flex-col gap-4 p-4 rounded-lg shadow-2xl'>
                         <div className='w-full h-auto flex flex-row items-center justify-between gap-4'>
