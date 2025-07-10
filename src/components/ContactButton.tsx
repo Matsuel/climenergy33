@@ -9,7 +9,6 @@ interface ContactButtonProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const ContactButton = ({
     className,
-    children,
     icon,
     title,
     content,

@@ -5,7 +5,6 @@ interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
 }
 
 const TextArea = ({
-    className,
     label,
     ...props
 }: TextAreaProps) => {
