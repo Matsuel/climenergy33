@@ -8,7 +8,7 @@ const Services = () => {
 
     return (
         <div className='md:w-4/5 w-[90%] h-auto flex lg:flex-row flex-col items-stretch justify-start bg-white shadow-2xl p-3 gap-4 px-5 rounded-xl'>
-            <div className="flex flex-col w-full lg:w-1/3 gap-4">
+            <div className="flex flex-col w-full lg:w-1/3 gap-4 cursor-pointer">
                 {SERVICES.map((service, index) => (
                     <div key={index} className={`w-full h-auto flex flex-col items-start justify-start gap-4 p-4 ${activeService === index ? 'bg-orange': 'bg-active-orange'} rounded-xl`} onClick={() => setActiveService(index)}>
                         <div className={`w-auto h-auto flex flex-row items-center justify-start gap-2 ${activeService === index ? 'text-white' : 'text-black '}`}>
