@@ -5,19 +5,19 @@ export const SERVICES = [
     {
         title: "Installation de systèmes de chauffage/climatisation",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        icon: <AirVent width={24} height={24} />,
+        icon: <AirVent size={16} />,
         image: "/images/services/1.jpg",
     },
     {
         title: "Entretien et dépannage",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        icon: <WrenchIcon width={24} height={24} />,
+        icon: <WrenchIcon width={16} height={16} />,
         image: "/images/services/2.jpg",
     },
     {
         title: "Electricité générale",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        icon: <BoltIcon width={24} height={24} />,
+        icon: <BoltIcon width={16} height={16} />,
         image: "/images/services/3.jpg",
     }
 ]
