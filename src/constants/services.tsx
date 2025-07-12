@@ -13,11 +13,5 @@ export const SERVICES = [
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         icon: <WrenchIcon width={16} height={16} />,
         image: "/images/services/2.jpg",
-    },
-    {
-        title: "Electricité générale",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        icon: <BoltIcon width={16} height={16} />,
-        image: "/images/services/3.jpg",
     }
 ]
