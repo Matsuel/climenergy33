@@ -26,7 +26,7 @@ const Testimonial = ({
                     />
                 ))}
             </div>
-            <p className='text-sm text-gray-700'>"{text}"</p>
+            <p className='text-sm text-gray-700'>&quot;{text}&quot;</p>
             <div className='flex flex-row items-center justify-start gap-2'>
                 {image ? (
                     <Image

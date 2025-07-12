@@ -17,7 +17,7 @@ const Testimonials = () => {
                 </div>
             </div>
             <div className='w-1/2 h-auto flex flex-col items-start justify-start gap-2'>
-                <h3 className='text-4xl font-bold'>L'avis de nos clients - Votre confort est notre priorité !</h3>
+                <h3 className='text-4xl font-bold'>L&apos;avis de nos clients - Votre confort est notre priorité !</h3>
                 <Testimonial
                     stars={5}
                     text="Un service exceptionnel, je recommande vivement !"
