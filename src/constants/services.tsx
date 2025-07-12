@@ -1,4 +1,4 @@
-import { BoltIcon, WrenchIcon } from "@heroicons/react/24/outline";
+import { WrenchIcon } from "@heroicons/react/24/outline";
 import { AirVent } from "lucide-react";
 
 export const SERVICES = [
