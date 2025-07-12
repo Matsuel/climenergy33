@@ -20,6 +20,7 @@ const Testimonial = ({
             <div className='flex flex-row items-center justify-start gap-2'>
                 {[...Array(stars)].map((_, index) => (
                     <Star
+                        fill='currentColor'
                         key={index}
                         className='text-yellow-500'
                         size={20}
