@@ -8,7 +8,7 @@ const ServicesPage = () => {
         <div className="w-full min-h-screen flex flex-col items-center gap-6">
             <Navbar />
             <Processus />
-            {/* <Services /> */}
+            <Services />
         </div>
     )
 }
