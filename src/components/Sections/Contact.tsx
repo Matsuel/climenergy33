@@ -3,7 +3,7 @@ import Button from '@/components/Button'
 import ContactButton from '@/components/ContactButton'
 import Input from '@/components/Input'
 import TextArea from '@/components/TextArea'
-import { MAIL, MAILTO, PHONES } from '@/constants/site'
+import { ADDRESS, MAIL, MAILTO, PHONES } from '@/constants/site'
 import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
 
@@ -40,7 +40,7 @@ const Contact = () => {
                         <ContactButton
                             icon={<BuildingOffice2Icon width={24} height={24} className='text-gray-400' />}
                             title="Adresse"
-                            content="123 Rue de la Paix, 75000 Paris"
+                            content={ADDRESS}
                         />
                     </div>
                 </div>
