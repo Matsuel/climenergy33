@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import Testimonial from '../Testimonial'
 
 const Testimonials = () => {
     return (
@@ -17,9 +18,12 @@ const Testimonials = () => {
             </div>
             <div className='w-1/2 h-auto flex flex-col items-start justify-start gap-2'>
                 <h3 className='text-4xl font-bold'>L'avis de nos clients - Votre confort est notre priorité !</h3>
-                {/* <p className='text-sm text-gray-700'> */}
+                <Testimonial
+                    stars={5}
+                    text="Un service exceptionnel, je recommande vivement !"
+                    author="Jean Dupont"
+                />
             </div>
-
         </div>
     )
 }
