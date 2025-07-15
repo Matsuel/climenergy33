@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar"
+import Footer from "@/components/Sections/Footer"
 import Processus from "@/components/Sections/Processus"
 import Services from "@/components/Sections/Services"
 import Testimonials from "@/components/Sections/Testimonials"
@@ -11,6 +12,7 @@ const ServicesPage = () => {
             <Processus />
             <Testimonials />
             <Services />
+            <Footer />
         </div>
     )
 }

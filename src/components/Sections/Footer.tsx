@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Footer = () => {
     return (
-        <footer className='md:w-4/5 w-[90%] h-auto flex lg:flex-row flex-col items-center justify-between bg-white shadow-2xl p-3 gap-4 px-5 rounded-xl'>
+        <footer className='md:w-4/5 w-[90%] h-auto flex lg:flex-row flex-col items-center justify-between bg-white shadow-2xl p-3 gap-4 px-5 rounded-xl mb-5'>
             <div className='w-auto h-auto flex flex-row items-center justify-start gap-8'>
                 {NAVBAR_LINKS.map((link) => (
                     <Link key={link.label} href={link.href} className='text-[#4A5565] hover:text-black transition-colors duration-300 font-medium md:text-base text-[12px]'>
