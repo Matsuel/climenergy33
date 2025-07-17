@@ -5,7 +5,7 @@ import { Menu, Snowflake, X } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import NavbarLink from './NavbarLink'
-import { Button } from './ui/button'
+import Button from './Button'
 
 const Navbar = () => {
 
@@ -60,8 +60,7 @@ const Navbar = () => {
 
                     {/* Mobile Menu Button */}
                     <Button
-                        variant="ghost"
-                        size="icon"
+                        variant="primary"
                         className="md:hidden"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
