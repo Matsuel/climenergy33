@@ -43,9 +43,9 @@ const Navbar = () => {
             </div>
 
             {/* Mobile menu */}
-            <div className={`${isOpen ? 'flex' : 'hidden'} md:hidden flex-col items-center gap-4 mt-4 w-full`}>
+            <div className={`${isOpen ? 'flex' : 'hidden'} md:hidden flex-col items-start gap-3 mt-4 w-full`}>
                 {NAVBAR_LINKS.map((link) => (
-                    <Link key={link.label} href={link.href} className="text-sm font-medium text-gray-700 hover:text-gray-900 w-full text-center py-2">
+                    <Link key={link.label} href={link.href} className="text-base font-semibold font-Montserrat text-gray-700 hover:text-gray-900 py-2 ml-4">
                         {link.label}
                     </Link>
                 ))}
