@@ -1,18 +1,22 @@
 export const NAVBAR_LINKS = [
     {
         label: "Acceuil",
-        href: "/",
+        href: "accueil",
     },
     {
         label: "Services",
-        href: "/services",
+        href: "services",
     },
     {
         label: "Avis",
-        href: "/temoignages",
+        href: "temoignages",
+    },
+    {
+        label: "Réalisations",
+        href: "realisations",
     },
     {
         label: "Contact",
-        href: "/contact",
+        href: "contact",
     }
 ]

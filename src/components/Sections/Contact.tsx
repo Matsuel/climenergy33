@@ -12,7 +12,7 @@ const Contact = () => {
     const router = useRouter();
 
     return (
-        <div className='md:w-4/5 w-[90%] h-auto flex lg:flex-row flex-col justify-center items-stretch rounded-xl gap-4'>
+        <div className='md:w-4/5 w-[90%] h-auto flex lg:flex-row flex-col justify-center items-stretch rounded-xl gap-4 py-16 lg:py-24'>
 
             <div className='w-full lg:w-1/2 h-auto p-4 flex flex-col items-start justify-between gap-4'>
                 <div className='w-full h-auto flex flex-col gap-4'>

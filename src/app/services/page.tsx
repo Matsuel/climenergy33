@@ -7,7 +7,7 @@ import React from 'react'
 
 const ServicesPage = () => {
     return (
-        <div className="w-full min-h-screen flex flex-col items-center gap-6">
+        <div className="w-full min-h-screen flex flex-col items-center gap-6 py-16 lg:py-24">
             <Navbar />
             <Processus />
             <Testimonials />

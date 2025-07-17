@@ -1,54 +1,91 @@
 "use client"
 import { NAVBAR_LINKS } from '@/constants/navbar'
-import { ADDRESS, MAILTO, SITE_NAME } from '@/constants/site'
-import usePage from '@/hooks/usePage'
-import { Mail, MapPinned, Menu, X } from 'lucide-react'
+import { SITE_NAME } from '@/constants/site'
+import { Menu, Snowflake, X } from 'lucide-react'
 import Link from 'next/link'
-import { useState } from 'react'
-import Button from './Button'
+import { useEffect, useState } from 'react'
 import NavbarLink from './NavbarLink'
+import { Button } from './ui/button'
 
 const Navbar = () => {
 
-    const { pathname } = usePage()
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
-    const [isOpen, setIsOpen] = useState<boolean>(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToSection = (sectionId: string) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+        setIsMenuOpen(false);
+    };
 
     return (
-        <nav className="md:w-4/5 w-[90%] h-auto flex flex-col justify-between items-center bg-white shadow-2xl mt-4 p-2 rounded-xl">
-            <div className="w-full h-auto flex flex-row items-center justify-between">
-                <div className="flex flex-col ml-4">
-                    <h1 className="text-sm font-medium">{SITE_NAME}</h1>
-                    <p className="text-xs text-gray-500 flex flex-row gap-1">{ADDRESS} <MapPinned size={12} /></p>
-                </div>
-                {/* Desktop links */}
-                <div className="h-full hidden md:flex flex-row items-center gap-5">
-                    {NAVBAR_LINKS.map((link) => (
-                        <NavbarLink key={link.label} href={link.href} isActive={pathname === link.href} className="text-sm font-medium">
-                            {link.label}
-                        </NavbarLink>
-                    ))}
-                </div>
-                <div className="flex flex-row items-center gap-2">
-                    <Link href={MAILTO}>
-                        <Button variant="primary">
-                            <Mail size={16} />
-                            Devis
-                        </Button>
+        <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
+            ? 'bg-white/90 backdrop-blur-sm  shadow-lg'
+            : 'bg-transparent'
+            }`}>
+            <div className="container mx-auto container-padding py-4">
+                <div className="flex items-center justify-between">
+                    <Link href={"/"} className="flex items-center space-x-2">
+                        <div className="p-2 bg-[rgb(0,123,255)]/10 rounded-lg">
+                            <Snowflake className="w-6 h-6 text-[rgb(0,123,255)]" />
+                        </div>
+                        <span className="text-xl font-bold text-foreground">{SITE_NAME}</span>
                     </Link>
-                    <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
-                        {!isOpen ? <Menu size={30} /> : <X size={30} />}
-                    </button>
-                </div>
-            </div>
 
-            {/* Mobile menu */}
-            <div className={`${isOpen ? 'flex' : 'hidden'} md:hidden flex-col items-start gap-3 mt-4 w-full`}>
-                {NAVBAR_LINKS.map((link) => (
-                    <Link key={link.label} href={link.href} className="text-base font-semibold font-Montserrat text-gray-700 hover:text-gray-900 py-2 ml-4">
-                        {link.label}
-                    </Link>
-                ))}
+                    {/* Desktop Menu */}
+                    <div className="hidden md:flex items-center space-x-8">
+                        {NAVBAR_LINKS.map((link) => (
+                            <NavbarLink
+                                key={link.label}
+                                onClick={() => scrollToSection(link.href)}
+                                >
+                                {link.label}
+                                </NavbarLink>
+                        ))}
+                        <Button onClick={() => scrollToSection('contact')} className="shadow-lg hover:shadow-xl transition-all duration-300">
+                            Devis Gratuit
+                        </Button>
+                    </div>
+
+                    {/* Mobile Menu Button */}
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        className="md:hidden"
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
+                        {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                    </Button>
+                </div>
+
+                {/* Mobile Menu */}
+                {isMenuOpen && (
+                    <div className="md:hidden mt-4 pb-4 space-y-4 glass-effect rounded-lg p-4 flex flex-col items-start">
+                        {NAVBAR_LINKS.map((link) => (
+                            <NavbarLink
+                                key={link.label}
+                                onClick={() => scrollToSection(link.href)}
+                                className="block text-lg"
+                            >
+                                {link.label}
+                            </NavbarLink>
+                        ))}
+                        <Button onClick={() => scrollToSection('contact')}>
+                            Devis Gratuit
+                        </Button>
+                    </div>
+                )}
             </div>
         </nav>
     )
