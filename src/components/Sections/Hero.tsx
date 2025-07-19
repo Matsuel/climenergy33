@@ -1,7 +1,7 @@
 import Button from '@/components/Button'
-import Intervention from '../Intervention'
 import Link from '@/components/Link'
 import { MAILTO } from '@/constants/site'
+import Intervention from '../Intervention'
 
 const Hero = () => {
     return (
@@ -11,7 +11,10 @@ const Hero = () => {
         >
             <Intervention />
             <h1 className='text-5xl md:text-8xl font-bold font-Montserrat'>
-                ClimEnergy33
+                <span className='bg-gradient-to-b from-[#53ACC7] to-[#1D2B47] bg-clip-text text-transparent'>Clim</span>
+                <span className='bg-gradient-to-b from-[#E4792D] to-[#CE332C] bg-clip-text text-transparent'>Energy</span>
+                <span className='bg-gradient-to-b from-[#53ACC7] to-[#1D2B47] bg-clip-text text-transparent'>3</span>
+                <span className='bg-gradient-to-b from-[#E4792D] to-[#CE332C] bg-clip-text text-transparent'>3</span>
             </h1>
             <p className='text-xl mt-4 text-center max-w-full sm:max-w-[80%] md:max-w-[60%] '>
                 Nous offrons des solutions complètes d'installation, de maintenance et de dépannage de systèmes sur vos systèmes de climatisation.
