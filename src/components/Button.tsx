@@ -3,7 +3,7 @@ import React from 'react'
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     children?: React.ReactNode;
-    variant?: 'primary' | 'secondary';
+    variant?: 'primary' | 'secondary' | 'white' | 'black' | 'transparent';
 }
 
 const Button = ({
@@ -16,6 +16,9 @@ const Button = ({
     const variants = {
         primary: 'bg-orange text-white border border-orange hover:bg-white hover:text-orange',
         secondary: 'bg-white text-orange border border-orange hover:bg-orange hover:text-white',
+        white: 'bg-white text-black border border-gray-300 hover:bg-gray-100',
+        black: 'bg-black text-white border border-black hover:bg-gray-800 hover:text-white',
+        transparent: 'bg-transparent text-black border border-gray-100 hover:bg-gray-100',
     }
 
     return (
