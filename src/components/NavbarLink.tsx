@@ -1,3 +1,4 @@
+import { cn } from '@/utils/cn';
 import React from 'react';
 
 interface NavbarLinkProps extends React.HTMLAttributes<HTMLButtonElement> {
@@ -11,7 +12,10 @@ const NavbarLink = ({
 }: NavbarLinkProps) => {
 
     return (
-        <button className="text-muted-foreground hover:text-primary transition-colors font-medium cursor-pointer" {...props}>
+        <button
+            {...props}
+            className={cn("bg-transparent hover:bg-black hover:text-white rounded-full transition-colors duration-300 font-medium cursor-pointer px-5 py-3 flex items-center justify-center gap-2", className)}
+        >
             {children}
         </button>
     )
