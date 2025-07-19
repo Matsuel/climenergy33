@@ -4,7 +4,7 @@ export const NAVBAR_LINKS = [
     {
         label: "Acceuil",
         icon: <Home className="w-4 h-4" />,
-        href: "accueil",
+        href: "hero",
     },
     {
         label: "Services",

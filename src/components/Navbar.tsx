@@ -6,8 +6,11 @@ import Link from 'next/link'
 import { useState } from 'react'
 import Button from './Button'
 import NavbarLink from './NavbarLink'
+import useActiveSection from '@/hooks/useActiveSection'
 
 const Navbar = () => {
+
+    const { activeSection } = useActiveSection();
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -36,6 +39,7 @@ const Navbar = () => {
                             <NavbarLink
                                 key={link.label}
                                 onClick={() => scrollToSection(link.href)}
+                                isActive={activeSection === link.href}
                             >
                                 {link.icon}
                                 {link.label}
@@ -64,6 +68,7 @@ const Navbar = () => {
                             <NavbarLink
                                 key={link.label}
                                 onClick={() => scrollToSection(link.href)}
+                                isActive={activeSection === link.href}
                                 className="block text-lg"
                             >
                                 {link.label}
