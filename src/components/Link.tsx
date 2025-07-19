@@ -1,27 +1,27 @@
 import { variants } from '@/constants/button';
 import { cn } from '@/utils/cn';
+import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 import React from 'react'
 
-interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+interface LinkProps extends NextLinkProps, React.HTMLAttributes<HTMLAnchorElement> {
     children?: React.ReactNode;
     variant?: 'primary' | 'secondary' | 'white' | 'black' | 'transparent';
 }
 
-const Button = ({
+const Link = ({
     children,
     className,
     variant = 'primary',
     ...props
-}: ButtonProps) => {
-
+}: LinkProps) => {
     return (
-        <button
+        <NextLink
             className={cn(`rounded-full text-xs font-semibold px-5 py-3 cursor-pointer transition-all duration-300 flex flex-row items-center justify-center gap-1 ${variants[variant]}`, className)}
             {...props}
         >
             {children}
-        </button>
+        </NextLink>
     )
 }
 
-export default Button
+export default Link
