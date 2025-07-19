@@ -3,7 +3,6 @@ import { NAVBAR_LINKS } from '@/constants/navbar'
 import { SITE_NAME } from '@/constants/site'
 import { NavbarContext } from '@/contexts/NavbarContext'
 import useActiveSection from '@/hooks/useActiveSection'
-import scrollToSection from '@/utils/scrollToSection'
 import { Menu, Snowflake, X } from 'lucide-react'
 import Link from 'next/link'
 import { useContext } from 'react'
@@ -14,6 +13,17 @@ const Navbar = () => {
 
     const { activeSection } = useActiveSection();
     const { isMenuOpen, setIsMenuOpen } = useContext(NavbarContext);
+
+    const scrollToSection = (sectionId: string) => {
+
+        const { setIsMenuOpen } = useContext(NavbarContext);
+
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+        setIsMenuOpen(false);
+    };
 
     return (
         <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isMenuOpen ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
