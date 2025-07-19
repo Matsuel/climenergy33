@@ -1,26 +1,19 @@
 "use client"
 import { NAVBAR_LINKS } from '@/constants/navbar'
 import { SITE_NAME } from '@/constants/site'
+import { NavbarContext } from '@/contexts/NavbarContext'
+import useActiveSection from '@/hooks/useActiveSection'
+import scrollToSection from '@/utils/scrollToSection'
 import { Menu, Snowflake, X } from 'lucide-react'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useContext } from 'react'
 import Button from './Button'
 import NavbarLink from './NavbarLink'
-import useActiveSection from '@/hooks/useActiveSection'
 
 const Navbar = () => {
 
     const { activeSection } = useActiveSection();
-
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const scrollToSection = (sectionId: string) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-        setIsMenuOpen(false);
-    };
+    const { isMenuOpen, setIsMenuOpen } = useContext(NavbarContext);
 
     return (
         <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isMenuOpen ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
