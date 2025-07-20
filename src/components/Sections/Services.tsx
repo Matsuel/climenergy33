@@ -1,39 +1,51 @@
 "use client"
-import { SERVICES } from '@/constants/services'
-import React, { useState } from 'react'
+
+import { SERVICES } from "@/constants/services"
+import { useState } from "react"
 
 const Services = () => {
 
-    const [activeService, setActiveService] = useState<number>(0);
+    const [serviceType, setServiceType] = useState<number>(0)
 
     return (
-        <div className='md:w-4/5 w-[90%] h-auto flex lg:flex-row flex-col items-stretch justify-start bg-white shadow-2xl p-3 gap-4 px-5 rounded-xl'>
-            <div className="flex flex-col w-full lg:w-1/3 gap-4 cursor-pointer">
-                {SERVICES.map((service, index) => (
-                    <div key={index} className={`w-full h-auto flex flex-col items-start justify-start gap-4 p-4 ${activeService === index ? 'bg-orange': 'bg-active-orange'} rounded-xl`} onClick={() => setActiveService(index)}>
-                        <div className={`w-auto h-auto flex flex-row items-center justify-start gap-2 ${activeService === index ? 'text-white' : 'text-black '}`}>
+        <section
+            id='services'
+            className='w-full min-h-screen h-auto flex flex-col items-center justify-start gap-4'
+        >
+            <h2 className='text-4xl font-bold mb-6'>Nos Services</h2>
+            <h3 className='text-2xl mb-4'>Comment on vous accompagne</h3>
+
+            <div className="flex flex-col gap-4">
+                <div className="flex items-center justify-center gap-2">
+                    <div className="w-10 h-10 rounded-xl bg-blue-500 flex items-center justify-center text-white text-xl">
+                        1
+                    </div>
+                    <h4 className='text-xl font-semibold'>Vous choisissez le type d'intervention :</h4>
+                </div>
+                <div className="flex flex-row gap-2">
+                    {SERVICES.map((service, index) => (
+                        <button key={service.title} className="flex flex-col items-center" onClick={() => setServiceType(index)}>
                             {service.icon}
-                            <h3 className={`text-base font-bold`}>{service.title}</h3>
+                            <span className="mt-2">{service.title}</span>
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            <div className="flex flex-col gap-4">
+                <h4 className='text-xl font-semibold'>On vous explique notre processus :</h4>
+                <div className="flex flex-row gap-2">
+                    {SERVICES[serviceType].process.map((step) => (
+                        <div key={step.title} className="flex flex-col items-center">
+                            {step.icon}
+                            <span className="mt-2 text-center">{step.title}</span>
+                            <p className="text-sm text-center">{step.description}</p>
                         </div>
-                        <p className={`leading-6 ${activeService === index ? 'block' : 'hidden'} text-white`}>{service.description}</p>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
-            <div className="hidden lg:flex w-1/3">
-                {activeService !== null && (
-                    <div className="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center transition-all duration-300">
-                        {/* Remplace cette div par une image si besoin */}
-                        <span className="text-gray-400">Image du service {activeService + 1}</span>
-                    </div>
-                )}
-            </div>
-            <div className="w-1/3 flex">
-                {activeService !== null && (
-                    <div className="w-full h-full bg-background rounded-lg">
-                    </div>
-                )}
-            </div>
-        </div>
+
+        </section>
     )
 }
 
