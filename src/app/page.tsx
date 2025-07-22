@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
-import Caroussel from "@/components/Sections/Caroussel";
 import Hero from "@/components/Sections/Hero";
+import Realisation from "@/components/Sections/Realisation";
 import Services from "@/components/Sections/Services";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
-      <Caroussel />
+      <Realisation />
     </div>
   );
 }
