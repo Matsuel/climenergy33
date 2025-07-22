@@ -7,16 +7,18 @@ interface TestimonialProps {
     text: string;
     author: string;
     image?: string;
+    variant?: 'xl' | 'lg';
 }
 
 const Testimonial = ({
     image,
     stars,
     text,
-    author
+    author,
+    variant = 'lg',
 }: TestimonialProps) => {
     return (
-        <div className='w-full h-auto flex flex-col items-start justify-start gap-2 p-4 bg-gray-100 rounded-lg'>
+        <div className={`${variant === 'xl' ? 'w-full' : 'w-1/3'} h-auto flex flex-col items-start justify-start gap-2 p-4 bg-gray-100 rounded-lg`}>
             <div className='flex flex-row items-center justify-start gap-2'>
                 {[...Array(stars)].map((_, index) => (
                     <Star

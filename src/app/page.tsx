@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Avis from "@/components/Sections/Avis";
 import Hero from "@/components/Sections/Hero";
 import Realisation from "@/components/Sections/Realisation";
 import Services from "@/components/Sections/Services";
@@ -9,6 +10,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
+      <Avis />
       <Realisation />
     </div>
   );
