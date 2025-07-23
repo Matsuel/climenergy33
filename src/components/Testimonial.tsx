@@ -18,7 +18,7 @@ const Testimonial = ({
     variant = 'lg',
 }: TestimonialProps) => {
     return (
-        <div className={`${variant === 'xl' ? 'w-full' : 'w-1/3'} h-auto flex flex-col items-start justify-start gap-2 p-4 bg-gray-100 rounded-lg`}>
+        <div className={`${variant === 'xl' ? 'w-4/5' : 'w-1/3'} h-auto flex flex-col items-start justify-start gap-2 p-4 bg-gray-100 rounded-lg`}>
             <div className='flex flex-row items-center justify-start gap-2'>
                 {[...Array(stars)].map((_, index) => (
                     <Star
