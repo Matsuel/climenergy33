@@ -4,6 +4,7 @@ import { SERVICES } from "@/constants/services"
 import { useState } from "react"
 import Layout from "../Layout"
 import { motion } from "framer-motion"
+import { Check } from "lucide-react"
 
 const Services = () => {
 
@@ -52,12 +53,21 @@ const Services = () => {
                         <div key={service.title} className="w-1/4 flex flex-col">
                             <div className="flex items-center">
                                 <motion.div
-                                    initial={{ backgroundColor: "#93C5FD" }} // bleu clair
-                                    animate={{ backgroundColor: "#3B82F6" }} // bleu foncé
+                                    initial={{ backgroundColor: "#93C5FD" }}
+                                    animate={{ backgroundColor: "#3B82F6" }}
                                     transition={{ duration: 0.7, delay: 0.7 * index }}
-                                    className="w-8 h-8 rounded-xl flex items-center justify-center text-white text-xl"
+                                    className="w-8 h-8 rounded-xl flex items-center justify-center text-white text-xl relative overflow-hidden"
                                 >
                                     {index + 1}
+                                    {/* Animation pour afficher le fond vert et le check après le délai */}
+                                    <motion.div
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ delay: 0.7 + 0.7 * index, duration: 0.3 }}
+                                        className="absolute inset-0 w-full h-full bg-green-600 flex items-center justify-center rounded-xl"
+                                    >
+                                        <Check className="w-5 h-5 text-white" />
+                                    </motion.div>
                                 </motion.div>
                                 {/* Tiret sauf après le dernier */}
                                 {index < arr.length - 1 && (
