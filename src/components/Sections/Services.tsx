@@ -2,19 +2,21 @@
 
 import { SERVICES } from "@/constants/services"
 import { useState } from "react"
+import Layout from "../Layout"
+import { motion } from "framer-motion"
 
 const Services = () => {
 
     const [serviceType, setServiceType] = useState<number>(0)
 
     return (
-        <section
+        <Layout
             id='services'
-            className='w-full min-h-screen h-auto flex flex-col items-start justify-start gap-4 bg-[#EDEBE7] px-[10%]'
+            variants="cream"
+            className="min-h-auto"
+            title="Nos Services"
+            subtitle="Comment on vous accompagne"
         >
-            <h2 className='text-4xl font-bold mb-6'>Nos Services</h2>
-            <h3 className='text-2xl mb-4'>Comment on vous accompagne</h3>
-
             <div className="flex flex-col gap-4 items-start">
                 <div className="flex items-center justify-center gap-2 bg-[#F8F8F8] p-3 rounded-xl">
                     <div className="w-8 h-8 rounded-xl bg-blue-500 flex items-center justify-center text-white text-xl">
@@ -24,31 +26,49 @@ const Services = () => {
                 </div>
                 <div className="flex flex-row items-start gap-2">
                     {SERVICES.map((service, index) => (
-                        <button key={service.title} className="flex flex-row justify-center items-center" onClick={() => setServiceType(index)}>
-                            {service.icon}
+                        <label key={service.title} className="flex flex-row justify-center items-center gap-2 cursor-pointer">
+                            <input
+                                type="checkbox"
+                                id="serviceType"
+                                checked={serviceType === index}
+                                onChange={() => setServiceType(index)}
+                            />
+                            <span className="w-8 h-8 flex items-center justify-center">{service.icon}</span>
                             <span className="mt-2">{service.title}</span>
-                        </button>
+                        </label>
                     ))}
                 </div>
             </div>
 
-            <div className="w-full flex flex-col gap-4 p-3 rounded-xl items-start">
+            <div className="w-full flex flex-col gap-4 rounded-xl items-start">
                 <div className="flex items-center justify-center gap-2 bg-[#F8F8F8] p-3 rounded-xl">
                     <div className="w-10 h-10 rounded-xl bg-blue-500 flex items-center justify-center text-white text-xl">
                         2
                     </div>
                     <h4 className='text-xl font-semibold'>On vous explique notre processus :</h4>
                 </div>
-                <div className="flex flex-row items-center w-full justify-between mb-2">
+                <div className="flex flex-row items-center w-full justify-start mb-2">
                     {SERVICES[serviceType].process.map((service, index, arr) => (
                         <div key={service.title} className="w-1/4 flex flex-col">
                             <div className="flex items-center">
-                                <div className="w-8 h-8 rounded-xl bg-blue-500 flex items-center justify-center text-white text-xl">
+                                <motion.div
+                                    initial={{ backgroundColor: "#93C5FD" }} // bleu clair
+                                    animate={{ backgroundColor: "#3B82F6" }} // bleu foncé
+                                    transition={{ duration: 0.7, delay: 0.7 * index }}
+                                    className="w-8 h-8 rounded-xl flex items-center justify-center text-white text-xl"
+                                >
                                     {index + 1}
-                                </div>
+                                </motion.div>
                                 {/* Tiret sauf après le dernier */}
                                 {index < arr.length - 1 && (
-                                    <div className="flex-1 h-1 mx-2 bg-blue-300 rounded-full" />
+                                    <div className="flex-1 h-1 mx-2 bg-blue-300 rounded-full relative overflow-hidden">
+                                        <motion.div
+                                            initial={{ width: 0 }}
+                                            animate={{ width: "100%" }}
+                                            transition={{ duration: 0.7, delay: 0.7 * (index) }}
+                                            className="absolute left-0 top-0 h-full bg-blue-500 rounded-full"
+                                        />
+                                    </div>
                                 )}
                             </div>
                             <div key={service.title} className="flex justify-start">
@@ -59,7 +79,7 @@ const Services = () => {
                 </div>
             </div>
 
-        </section >
+        </Layout>
     )
 }
 
