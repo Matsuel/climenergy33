@@ -6,8 +6,8 @@ const Contact = () => {
     return (
         <Layout
             id='contact'
-            title="Nous Contacter"
-            subtitle="Comment nous joindre"
+            title=""
+            subtitle=""
             className='items-center justify-center'
         >
             <ContactForm />
