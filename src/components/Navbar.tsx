@@ -35,7 +35,7 @@ const Navbar = () => {
                     </Link>
 
                     {/* Desktop Menu */}
-                    <div className="hidden lg:flex items-center gap-2 bg-[#F8F8F8] rounded-full">
+                    <div className="hidden lg:flex items-center gap-2 p-1 bg-[#F8F8F8] rounded-full">
                         {NAVBAR_LINKS.map((link) => (
                             <NavbarLink
                                 key={link.label}
