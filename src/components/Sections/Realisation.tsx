@@ -23,7 +23,7 @@ const Realisation = () => {
     return (
         <section
             id='realisations'
-            className='w-full flex flex-col items-center gap-4 bg-[#EDEBE7]'
+            className='w-full max-w-screen overflow-hidden flex flex-col items-center gap-4 bg-[#EDEBE7]'
         >
             <Marquee pauseOnHover className="[--duration:20s]">
                 {firstRow.map((review) => (
