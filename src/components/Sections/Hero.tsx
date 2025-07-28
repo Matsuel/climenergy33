@@ -24,7 +24,7 @@ const Hero = () => {
                 <span className='bg-gradient-to-b from-[#E4792D] to-[#CE332C] bg-clip-text text-transparent'>3</span>
             </motion.h1>
             <p className='text-xl mt-4 text-center max-w-full sm:max-w-[80%] md:max-w-[60%] '>
-                Nous offrons des solutions complètes d'installation, de maintenance et de dépannage de systèmes sur vos systèmes de climatisation.
+                Nous offrons des solutions complètes d&apos;installation, de maintenance et de dépannage de systèmes sur vos systèmes de climatisation.
             </p>
 
             <div className='flex items-center justify-center gap-4'>

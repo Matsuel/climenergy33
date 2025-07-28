@@ -1,10 +1,9 @@
 "use client"
 
 import { SERVICES } from "@/constants/services"
+import { motion } from "framer-motion"
 import { useState } from "react"
 import Layout from "../Layout"
-import { motion } from "framer-motion"
-import { Check } from "lucide-react"
 
 const Services = () => {
 
@@ -23,7 +22,7 @@ const Services = () => {
                     <div className="w-8 h-8 rounded-xl bg-blue-500 flex items-center justify-center text-white text-xl">
                         1
                     </div>
-                    <h4 className='text-xl font-semibold'>Vous choisissez le type d'intervention :</h4>
+                    <h4 className='text-xl font-semibold'>Vous choisissez le type d&apos;intervention :</h4>
                 </div>
                 <div className="flex flex-row items-start gap-2">
                     {SERVICES.map((service, index) => (

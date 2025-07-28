@@ -30,7 +30,7 @@ const useActiveSection = () => {
         return () => {
             window.removeEventListener("scroll", onScroll);
         };
-    }, [sectionIds]);
+    }, [sectionIds, onScroll]);
 
     return { activeSection };
 }
