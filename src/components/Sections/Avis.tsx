@@ -1,12 +1,14 @@
+import Layout from "../Layout"
 import Testimonial from "../Testimonial"
 
 const Avis = () => {
     return (
-        <section
+        <Layout
+            title="Avis de nos clients"
+            subtitle="Découvrez ce que nos clients pensent de nos services"
             id='temoignages'
             className='w-full flex flex-col items-center gap-4'
         >
-            Avis
             <div className="flex flex-row items-center justify-center flex-wrap gap-4">
                 <Testimonial
                     author="John Doe"
@@ -27,7 +29,7 @@ const Avis = () => {
                     stars={5}
                 />
             </div>
-        </section>
+        </Layout>
     )
 }
 

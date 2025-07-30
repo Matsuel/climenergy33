@@ -1,7 +1,12 @@
+"use client"
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
 import Link from 'next/link'
+import { useState } from 'react';
 
 const ContactForm = () => {
+
+    const [isChecked, setIsChecked] = useState<boolean>(false);
+
     return (
         <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
             <div
@@ -15,10 +20,6 @@ const ContactForm = () => {
                     }}
                     className="relative left-1/2 -z-10 aspect-1155/678 w-144.5 max-w-none -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-288.75"
                 />
-            </div>
-            <div className="mx-auto max-w-2xl text-center">
-                <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">Nous Contacter</h2>
-                <p className="mt-2 text-lg/8 text-gray-600">Une question, un projet ? Remplissez le formulaire ci-dessous, nous vous répondrons rapidement.</p>
             </div>
             <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
                 <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
@@ -119,6 +120,8 @@ const ContactForm = () => {
                                     type="checkbox"
                                     aria-label="Agree to policies"
                                     className="absolute inset-0 appearance-none focus:outline-hidden"
+                                    checked={isChecked}
+                                    onChange={() => setIsChecked(!isChecked)}
                                 />
                             </div>
                         </div>
@@ -134,7 +137,8 @@ const ContactForm = () => {
                 <div className="mt-10">
                     <button
                         type="submit"
-                        className="block w-full rounded-full bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer"
+                        className={`block w-full rounded-full bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer ${isChecked ? '' : 'opacity-50 cursor-not-allowed'}`}
+                        disabled={!isChecked}
                     >
                         Envoyer votre demande
                     </button>

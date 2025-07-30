@@ -24,8 +24,10 @@ const Layout = ({
             className={cn(`w-full min-h-screen h-auto flex flex-col items-start justify-start gap-4 py-8 ${backgroundColor} px-[10%]`, className)}
             {...props}
         >
-            <h1 className='text-4xl font-bold'>{title}</h1>
-            <h2 className='text-2xl'>{subtitle}</h2>
+            <div className="mx-auto max-w-2xl text-center">
+                <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">{title}</h2>
+                <p className="mt-2 text-lg/8 text-gray-600">{subtitle}</p>
+            </div>
             {children}
         </section>
     )
