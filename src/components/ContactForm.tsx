@@ -107,13 +107,13 @@ const ContactForm = () => {
                                     name="agree-to-policies"
                                     type="checkbox"
                                     aria-label="Agree to policies"
-                                    className="absolute inset-0 appearance-none focus:outline-hidden"
+                                    className="absolute inset-0 appearance-none focus:outline-hidden cursor-pointer"
                                     checked={isChecked}
                                     onChange={() => setIsChecked(!isChecked)}
                                 />
                             </div>
                         </div>
-                        <label htmlFor="agree-to-policies" className="text-sm/6 text-gray-600">
+                        <label htmlFor="agree-to-policies" className="text-sm/6 text-gray-600 cursor-pointer">
                             En cochant cette case, vous acceptez notre {' '}
                             <Link href="#" className="font-semibold whitespace-nowrap text-indigo-600">
                                 politique de confidentialité
