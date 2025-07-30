@@ -27,7 +27,7 @@ const Realisation = () => {
             subtitle='Découvrez nos réalisations en matière de climatisation, chauffage et énergies renouvelables'
             id='realisations'
             variants='cream'
-            className='px-0'
+            className='px-0 overflow-hidden'
         >
             <Marquee pauseOnHover className="[--duration:20s]">
                 {firstRow.map((review) => (

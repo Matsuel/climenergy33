@@ -24,7 +24,7 @@ const Services = () => {
                     </div>
                     <h4 className='text-xl font-semibold'>Vous choisissez le type d&apos;intervention :</h4>
                 </div>
-                <div className="flex flex-row items-start gap-2">
+                <div className="flex md:flex-row flex-col items-start gap-2">
                     {SERVICES.map((service, index) => (
                         <label key={service.title} className="flex flex-row justify-center items-center gap-2 cursor-pointer">
                             <input
