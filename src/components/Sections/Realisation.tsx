@@ -1,6 +1,7 @@
 import React from 'react'
 import { Marquee } from '../Marquee';
 import ReviewCard from '../ReviewCard';
+import Layout from '../Layout';
 
 const images = [
     "/caroussel/1.jpeg",
@@ -21,9 +22,12 @@ const secondRow = images.slice(images.length / 2);
 
 const Realisation = () => {
     return (
-        <section
+        <Layout
+            title='Réalisations'
+            subtitle='Découvrez nos réalisations en matière de climatisation, chauffage et énergies renouvelables'
             id='realisations'
-            className='w-full max-w-screen overflow-hidden flex flex-col items-center gap-4 bg-[#EDEBE7]'
+            variants='cream'
+            className='px-0'
         >
             <Marquee pauseOnHover className="[--duration:20s]">
                 {firstRow.map((review) => (
@@ -37,7 +41,7 @@ const Realisation = () => {
             </Marquee>
             <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
             <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
-        </section>
+        </Layout>
     )
 }
 

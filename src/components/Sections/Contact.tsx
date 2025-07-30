@@ -8,7 +8,7 @@ const Contact = () => {
             id='contact'
             title="Nous Contacter"
             subtitle="Une question, un projet ? Remplissez le formulaire ci-dessous, nous vous répondrons rapidement."
-            className='items-center justify-center'
+            className='items-center'
         >
             <ContactForm />
         </Layout>

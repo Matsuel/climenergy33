@@ -7,7 +7,7 @@ const Avis = () => {
             title="Avis de nos clients"
             subtitle="Découvrez ce que nos clients pensent de nos services"
             id='temoignages'
-            className='w-full flex flex-col items-center gap-4'
+            className='w-full min-h-auto flex flex-col items-center gap-4'
         >
             <div className="flex flex-row items-center justify-center flex-wrap gap-4">
                 <Testimonial
