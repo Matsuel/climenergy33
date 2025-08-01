@@ -7,7 +7,7 @@ import Layout from "../Layout"
 
 const Services = () => {
 
-    const [serviceType, setServiceType] = useState<number>(0)
+    const [serviceType, setServiceType] = useState<number>(1)
 
     return (
         <Layout

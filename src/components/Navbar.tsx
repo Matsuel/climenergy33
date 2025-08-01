@@ -24,7 +24,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isMenuOpen ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
+        <nav className={`fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-lg`}>
             <div className="container mx-auto container-padding py-4">
                 <div className="flex items-center justify-between md:px-0 px-3">
                     <Link href={"/"} className="flex items-center space-x-2">
@@ -54,7 +54,7 @@ const Navbar = () => {
 
                     {/* Mobile Menu Button */}
                     <Button
-                        variant="primary"
+                        variant="transparent"
                         className="lg:hidden p-3"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
