@@ -26,7 +26,7 @@ const Navbar = () => {
     return (
         <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isMenuOpen ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
             <div className="container mx-auto container-padding py-4">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between md:px-0 px-3">
                     <Link href={"/"} className="flex items-center space-x-2">
                         <div className="p-2 bg-[rgb(0,123,255)]/10 rounded-lg">
                             <Snowflake className="w-6 h-6 text-[rgb(0,123,255)]" />
@@ -55,7 +55,7 @@ const Navbar = () => {
                     {/* Mobile Menu Button */}
                     <Button
                         variant="primary"
-                        className="lg:hidden"
+                        className="lg:hidden p-3"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                         {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -70,12 +70,12 @@ const Navbar = () => {
                                 key={link.label}
                                 onClick={() => scrollToSection(link.href)}
                                 isActive={activeSection === link.href}
-                                className="block text-lg"
+                                className="block text-lg w-full"
                             >
                                 {link.label}
                             </NavbarLink>
                         ))}
-                        <Button onClick={() => scrollToSection('contact')}>
+                        <Button onClick={() => scrollToSection('contact')} className='w-full'>
                             Devis Gratuit
                         </Button>
                     </div>
