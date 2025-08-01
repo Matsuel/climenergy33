@@ -1,66 +1,7 @@
+import { StarIcon } from "@heroicons/react/24/solid";
 import Layout from "../Layout";
-import TestimonialsColumn from "../TestimonialColumn";
-
-const testimonials = [
-    {
-        text: "This ERP revolutionized our operations, streamlining finance and inventory. The cloud-based platform keeps us productive, even remotely.",
-        image: "/logo.png",
-        name: "Briana Patton",
-        role: "Operations Manager",
-    },
-    {
-        text: "Implementing this ERP was smooth and quick. The customizable, user-friendly interface made team training effortless.",
-        image: "/logo.png",
-        name: "Bilal Ahmed",
-        role: "IT Manager",
-    },
-    {
-        text: "The support team is exceptional, guiding us through setup and providing ongoing assistance, ensuring our satisfaction.",
-        image: "/logo.png",
-        name: "Saman Malik",
-        role: "Customer Support Lead",
-    },
-    {
-        text: "This ERP's seamless integration enhanced our business operations and efficiency. Highly recommend for its intuitive interface.",
-        image: "/logo.png",
-        name: "Omar Raza",
-        role: "CEO",
-    },
-    {
-        text: "Its robust features and quick support have transformed our workflow, making us significantly more efficient.",
-        image: "/logo.png",
-        name: "Zainab Hussain",
-        role: "Project Manager",
-    },
-    {
-        text: "The smooth implementation exceeded expectations. It streamlined processes, improving overall business performance.",
-        image: "/logo.png",
-        name: "Aliza Khan",
-        role: "Business Analyst",
-    },
-    {
-        text: "Our business functions improved with a user-friendly design and positive customer feedback.",
-        image: "/logo.png",
-        name: "Farhan Siddiqui",
-        role: "Marketing Director",
-    },
-    {
-        text: "They delivered a solution that exceeded expectations, understanding our needs and enhancing our operations.",
-        image: "/logo.png",
-        name: "Sana Sheikh",
-        role: "Sales Manager",
-    },
-    {
-        text: "Using this ERP, our online presence and conversions significantly improved, boosting business performance.",
-        image: "/logo.png",
-        name: "Hassan Ali",
-        role: "E-commerce Manager",
-    },
-];
-
-const firstColumn = testimonials.slice(0, 3);
-const secondColumn = testimonials.slice(3, 6);
-const thirdColumn = testimonials.slice(6, 9);
+import Link from "../Link";
+import { TESTIMONIALSLINK } from "@/constants/site";
 
 const Avis = () => {
     return (
@@ -70,13 +11,39 @@ const Avis = () => {
             id='temoignages'
             className='w-full min-h-auto flex flex-col items-center gap-4'
         >
-            <div className="container z-10 mx-auto">
-
-                <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
-                    <TestimonialsColumn testimonials={firstColumn} duration={15} />
-                    <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
-                    <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
+            <div className="md:w-2/3 w-full flex flex-col items-center gap-4">
+                <div className="flex flex-col items-center p-6">
+                    <div className="flex flex-row items-center gap-2">
+                        {Array.from({ length: 5 }, (_, index) => (
+                            <StarIcon
+                                key={index}
+                                className="w-5 h-5 text-indigo-600"
+                            />
+                        ))}
+                    </div>
+                    <p className="text-lg font-semibold mt-2 text-center">
+                        &quot;Société très sérieuse, de bons conseil à l’écoute.
+                        Installation rapide avec le souci du détail et de la propreté.
+                        John et Maxime sont hyper professionnels. Nous recommandons vivement !!!
+                        &quot;
+                    </p>
+                    <p className="text-sm text-gray-500 mt-2">
+                        - Client satisfait
+                    </p>
+                    <div className="flex items-center gap-2 mt-4">
+                        <div className="w-10 h-10 rounded-full bg-[#F4511E] text-white flex items-center justify-center">
+                            T
+                        </div>
+                        <p className="text-sm font-medium">
+                            T. Jean-Marc
+                        </p>
+                        </div>
                 </div>
+
+                <Link href={TESTIMONIALSLINK} className="md:w-2/3 w-full md:text-base">
+                    Consulter tous les avis (Google Maps)
+                </Link>
+
             </div>
         </Layout>
     )
