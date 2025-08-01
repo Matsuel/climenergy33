@@ -6,6 +6,15 @@ import { motion } from 'framer-motion'
 import Intervention from '../Intervention'
 
 const Hero = () => {
+
+    const scrollToSection = (sectionId: string) => {
+
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <section
             id='hero'
@@ -28,7 +37,7 @@ const Hero = () => {
             </p>
 
             <div className='flex items-center justify-center gap-4'>
-                <Button variant='primary'>Obtenir un devis</Button>
+                <Button variant='primary' onClick={() => scrollToSection('contact')}>Obtenir un devis</Button>
                 <Link href={MAILTO} variant='white' className=''>Contactez-nous</Link>
             </div>
         </section>
