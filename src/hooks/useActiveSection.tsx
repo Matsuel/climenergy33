@@ -1,5 +1,5 @@
 import { NAVBAR_LINKS } from "@/constants/navbar";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const useActiveSection = () => {
 
@@ -7,7 +7,7 @@ const useActiveSection = () => {
 
     const [activeSection, setActiveSection] = useState<string | null>(null);
 
-    const onScroll = () => {
+    const onScroll = useCallback(() => {
         let current: string | null = null;
         for (const id of sectionIds) {
             const el = document.getElementById(id);
@@ -20,7 +20,7 @@ const useActiveSection = () => {
             }
         }
         setActiveSection(current);
-    }
+    }, [sectionIds]);
 
     useEffect(() => {
         window.addEventListener("scroll", onScroll, { passive: true });
