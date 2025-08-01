@@ -17,13 +17,13 @@ export const NAVBAR_LINKS = [
         href: "temoignages",
     },
     {
-        label: "Réalisations",
-        icon: <Hammer className="w-4 h-4" />,
-        href: "realisations",
-    },
-    {
         label: "Contact",
         icon: <Mail className="w-4 h-4" />,
         href: "contact",
+    },
+    {
+        label: "Réalisations",
+        icon: <Hammer className="w-4 h-4" />,
+        href: "realisations",
     }
 ]

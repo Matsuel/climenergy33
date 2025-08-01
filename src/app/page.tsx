@@ -13,8 +13,8 @@ export default function Home() {
       <Hero />
       <Services />
       <Avis />
-      <Realisation />
       <Contact />
+      <Realisation />
       <Footer />
     </div>
   );
