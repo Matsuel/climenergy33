@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <footer className='w-full h-auto flex flex-col px-8 pb-7'>
 
-            <div className='w-full flex flex-row items-center justify-between'>
+            <div className='w-full flex md:flex-row flex-col items-center justify-between'>
                 <Image
                     src="/logonobg.png"
                     alt="Climenergy Logo"
@@ -19,7 +19,7 @@ const Footer = () => {
                     className='object-contain'
                 />
 
-                <div className='w-1/2 flex flex-row items-start justify-start gap-24'>
+                <div className='md:w-1/2 w-full md:px-0 px-3 md:mt-0 mt-16 flex flex-row flex-wrap gap-5 items-start justify-between'>
                     <div className='w-auto h-auto flex flex-col items-start justify-center'>
                         <p className='text-black text-sm font-Montserrat font-medium mb-5'>Navigation</p>
                         <div className='w-auto h-auto flex flex-col items-start justify-center gap-4'>
