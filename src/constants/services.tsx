@@ -1,16 +1,15 @@
 import { WrenchIcon } from "@heroicons/react/24/outline";
 import { AirVent } from "lucide-react";
-import { INSTALLPROCESSUS, REPAIRSPROCESSUS } from "./processus";
 
 export const SERVICES = [
     {
-        title: "Entretien et dépannage",
+        name: "Entretien et dépannage",
         icon: <WrenchIcon width={16} height={16} />,
-        process: REPAIRSPROCESSUS
+        description: "Réalisation de l'entretien et du dépannage de vos installations de chauffage, climatisation. Remplacement de pièces défectueuses, nettoyage et optimisation des systèmes."
     },
     {
-        title: "Installation de chauffage/climatisation",
+        name: "Installation de chauffage/climatisation",
         icon: <AirVent size={16} />,
-        process: INSTALLPROCESSUS
+        description: "Installation de systèmes de chauffage et de climatisation adaptés à vos besoins. Choix des équipements, mise en place et réglages pour un confort optimal."
     }    
-]
+];
