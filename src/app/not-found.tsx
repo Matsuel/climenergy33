@@ -13,7 +13,7 @@ const NotFound = () => {
                     initial="hidden"
                     animate="visible"
                     variants={fadeUp as unknown as Variants}
-                    className="text-base font-semibold text-indigo-600"
+                    className="text-base font-semibold text-blue-600"
                 >
                     404
                 </motion.p>

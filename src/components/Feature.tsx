@@ -9,7 +9,7 @@ const Features = () => {
                         {SERVICES.map((feature) => (
                             <div key={feature.name} className="relative pl-16">
                                 <dt className="text-base/7 font-semibold text-gray-900">
-                                    <div className="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+                                    <div className="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-blue-600 text-white">
                                         {feature.icon}
                                     </div>
                                     {feature.name}

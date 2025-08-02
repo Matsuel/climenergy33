@@ -1,6 +1,6 @@
 "use client"
-import { ChevronDownIcon } from '@heroicons/react/16/solid'
-import Link from 'next/link'
+import { ChevronDownIcon } from '@heroicons/react/16/solid';
+import Link from 'next/link';
 import { useState } from 'react';
 
 const ContactForm = () => {
@@ -21,7 +21,7 @@ const ContactForm = () => {
                                 name="first-name"
                                 type="text"
                                 autoComplete="given-name"
-                                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600"
                             />
                         </div>
                     </div>
@@ -35,7 +35,7 @@ const ContactForm = () => {
                                 name="last-name"
                                 type="text"
                                 autoComplete="family-name"
-                                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600"
                             />
                         </div>
                     </div>
@@ -49,7 +49,7 @@ const ContactForm = () => {
                                 name="email"
                                 type="email"
                                 autoComplete="email"
-                                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600"
                             />
                         </div>
                     </div>
@@ -58,14 +58,14 @@ const ContactForm = () => {
                             Numéro de téléphone
                         </label>
                         <div className="mt-2.5">
-                            <div className="flex rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
+                            <div className="flex rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-blue-600">
                                 <div className="grid shrink-0 grid-cols-1 focus-within:relative">
                                     <select
                                         id="country"
                                         name="country"
                                         autoComplete="country"
                                         aria-label="Country"
-                                        className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-7 pl-3.5 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                                        className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-7 pl-3.5 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600 sm:text-sm/6"
                                     >
                                         <option>FR</option>
                                     </select>
@@ -93,14 +93,14 @@ const ContactForm = () => {
                                 id="message"
                                 name="message"
                                 rows={4}
-                                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600"
                                 defaultValue={''}
                             />
                         </div>
                     </div>
                     <div className="flex gap-x-4 sm:col-span-2">
                         <div className="flex h-6 items-center">
-                            <div className="group relative inline-flex w-8 shrink-0 rounded-full bg-gray-200 p-px inset-ring inset-ring-gray-900/5 outline-offset-2 outline-indigo-600 transition-colors duration-200 ease-in-out has-checked:bg-indigo-600 has-focus-visible:outline-2">
+                            <div className="group relative inline-flex w-8 shrink-0 rounded-full bg-gray-200 p-px inset-ring inset-ring-gray-900/5 outline-offset-2 outline-blue-600 transition-colors duration-200 ease-in-out has-checked:bg-blue-600 has-focus-visible:outline-2">
                                 <span className="size-4 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-3.5" />
                                 <input
                                     id="agree-to-policies"
@@ -115,7 +115,7 @@ const ContactForm = () => {
                         </div>
                         <label htmlFor="agree-to-policies" className="text-sm/6 text-gray-600 cursor-pointer">
                             En cochant cette case, vous acceptez notre {' '}
-                            <Link href="#" className="font-semibold whitespace-nowrap text-indigo-600">
+                            <Link href="#" className="font-semibold whitespace-nowrap text-blue-600">
                                 politique de confidentialité
                             </Link>
                             .
@@ -125,7 +125,7 @@ const ContactForm = () => {
                 <div className="mt-10">
                     <button
                         type="submit"
-                        className={`block w-full rounded-full bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer ${isChecked ? '' : 'opacity-50 cursor-not-allowed'}`}
+                        className={`block w-full rounded-full bg-blue-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 cursor-pointer ${isChecked ? '' : 'opacity-50 cursor-not-allowed'}`}
                         disabled={!isChecked}
                     >
                         Envoyer votre demande

@@ -17,7 +17,7 @@ const Avis = () => {
                         {Array.from({ length: 5 }, (_, index) => (
                             <StarIcon
                                 key={index}
-                                className="w-5 h-5 text-indigo-600"
+                                className="w-5 h-5 text-blue-600"
                             />
                         ))}
                     </div>
