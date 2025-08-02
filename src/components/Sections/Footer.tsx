@@ -21,7 +21,7 @@ const Footer = () => {
 
                 <div className='md:w-1/2 w-full md:px-0 px-3 md:mt-0 mt-16 flex flex-row flex-wrap gap-5 items-start justify-between'>
                     <div className='w-auto h-auto flex flex-col items-start justify-center'>
-                        <p className='text-black text-sm font-Montserrat font-medium mb-5'>Navigation</p>
+                        <Link href={"/"} className='text-black text-sm font-Montserrat font-medium mb-5'>Navigation</Link>
                         <div className='w-auto h-auto flex flex-col items-start justify-center gap-4'>
                             {NAVBAR_LINKS.map((link, index) => (
                                 <Link key={index} href={link.href} className='hover:text-black text-gray-500 text-sm font-Montserrat font-medium'>
