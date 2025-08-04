@@ -1,3 +1,4 @@
+"use client";
 import { NAVBAR_LINKS } from '@/constants/navbar';
 import { MAILTO, PHONE_LINKS } from '@/constants/site';
 import Image from 'next/image';
@@ -6,6 +7,13 @@ import Link from 'next/link';
 const Footer = () => {
 
     const year = new Date().getFullYear();
+
+    const scrollToSection = (href: string) => {
+        const element = document.getElementById(href);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
         <footer className='w-full h-auto flex flex-col px-8 pb-7'>
@@ -24,9 +32,9 @@ const Footer = () => {
                         <Link href={"/"} className='text-black text-sm font-Montserrat font-medium mb-5'>Navigation</Link>
                         <div className='w-auto h-auto flex flex-col items-start justify-center gap-4'>
                             {NAVBAR_LINKS.map((link, index) => (
-                                <Link key={index} href={link.href} className='hover:text-black text-gray-500 text-sm font-Montserrat font-medium'>
+                                <button key={index} onClick={()=> scrollToSection(link.href)} className='hover:text-black cursor-pointer text-gray-500 text-sm font-Montserrat font-medium'>
                                     {link.label}
-                                </Link>
+                                </button>
                             ))}
                         </div>
                     </div>
