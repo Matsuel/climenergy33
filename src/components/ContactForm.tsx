@@ -2,14 +2,63 @@
 import { ChevronDownIcon } from '@heroicons/react/16/solid';
 import Link from 'next/link';
 import { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { toast } from 'sonner';
+
+interface Inputs {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    message: string;
+}
+
+const sendEmail = async (data: Inputs) => {
+    try {
+        const response = await fetch('/api/send', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (!response.ok) {
+            toast.error('Erreur lors de l\'envoi de l\'email');
+        }
+
+        const result = await response.json();
+        if (result.success) {
+            console.log('Email sent successfully:', result);
+            toast.success('Email envoyé avec succès');
+        } else {
+            console.error('Error sending email:', result.error);
+            toast.error('Erreur lors de l\'envoi de l\'email');
+        }
+    } catch (error) {
+        console.error(error);
+        toast.error('Erreur lors de l\'envoi de l\'email');
+    }
+}
 
 const ContactForm = () => {
 
     const [isChecked, setIsChecked] = useState<boolean>(false);
 
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm<Inputs>()
+
+    const onSubmit: SubmitHandler<Inputs> = (data) => sendEmail(data);
+
+    console.log(watch("firstName"))
+
     return (
         <div className="isolate bg-white px-6 lg:px-8">
-            <form action="#" method="POST" className="mx-auto mt-10 max-w-xl">
+            <form onSubmit={handleSubmit(onSubmit)} className="mx-auto mt-10 max-w-xl">
                 <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div>
                         <label htmlFor="first-name" className="block text-sm/6 font-semibold text-gray-900">
@@ -18,7 +67,7 @@ const ContactForm = () => {
                         <div className="mt-2.5">
                             <input
                                 id="first-name"
-                                name="first-name"
+                                {...register("firstName")}
                                 type="text"
                                 autoComplete="given-name"
                                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600"
@@ -32,7 +81,7 @@ const ContactForm = () => {
                         <div className="mt-2.5">
                             <input
                                 id="last-name"
-                                name="last-name"
+                                {...register("lastName")}
                                 type="text"
                                 autoComplete="family-name"
                                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600"
@@ -46,9 +95,9 @@ const ContactForm = () => {
                         <div className="mt-2.5">
                             <input
                                 id="email"
-                                name="email"
                                 type="email"
                                 autoComplete="email"
+                                {...register("email")}
                                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600"
                             />
                         </div>
@@ -76,7 +125,7 @@ const ContactForm = () => {
                                 </div>
                                 <input
                                     id="phone-number"
-                                    name="phone-number"
+                                    {...register("phone")}
                                     type="text"
                                     placeholder="+33 6 12 34 56 78"
                                     className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
@@ -91,7 +140,7 @@ const ContactForm = () => {
                         <div className="mt-2.5">
                             <textarea
                                 id="message"
-                                name="message"
+                                {...register("message")}
                                 rows={4}
                                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600"
                                 defaultValue={''}

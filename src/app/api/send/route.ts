@@ -10,6 +10,8 @@ export async function POST(req: Request) {
 
     const { firstName, lastName, email, phone, message } = body;
 
+    console.log('Received data:', { firstName, lastName, email, phone, message });
+
     try {
         const { data, error } = await resend.emails.send({
             from: 'Acme <onboarding@resend.dev>',
