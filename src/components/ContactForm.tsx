@@ -28,16 +28,20 @@ const sendEmail = async (data: Inputs) => {
 
         if (!response.ok) {
             toast.error('Erreur lors de l\'envoi de l\'email');
+            return { success: false };
         }
 
         const result = await response.json();
         if (result.success) {
             toast.success('Email envoyé avec succès');
+            return { success: true };
         } else {
             toast.error('Erreur lors de l\'envoi de l\'email');
+            return { success: false };
         }
     } catch {
         toast.error('Erreur lors de l\'envoi de l\'email');
+        return { success: false };
     }
 }
 
@@ -47,10 +51,16 @@ const ContactForm = () => {
 
     const {
         register,
-        handleSubmit
+        handleSubmit,
+        reset
     } = useForm<Inputs>()
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => sendEmail(data);
+    const onSubmit: SubmitHandler<Inputs> = async (data) => {
+        const result = await sendEmail(data);
+        if (result.success) {
+            reset();
+        }
+    };
 
     return (
         <div className="isolate bg-white px-6 lg:px-8">
