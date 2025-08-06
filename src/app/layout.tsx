@@ -17,6 +17,33 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Climenergy33",
   description: "Climenergy33 - Installation de systèmes de climatisation et de chauffage en Gironde",
+  applicationName: "Climenergy33",
+  keywords: [
+    "climatisation",
+    "chauffage",
+    "installation",
+    "Gironde",
+    "Bordeaux",
+    "Climenergy33",
+    "systèmes de climatisation",
+    "systèmes de chauffage",
+    "énergie",
+    "économies d'énergie",
+    "confort thermique",
+    "professionnels",
+    "services de climatisation",
+    "services de chauffage",
+    "maintenance"
+  ],
+  authors: [
+    {
+      name: "Mathéo Lang",
+      url: "https://matheolang.fr"
+    }
+  ],
+  creator: "Mathéo Lang",
+  publisher: "Climenergy33",
+  
   openGraph: {
     title: "Climenergy33",
     description: "Climenergy33 - Installation de systèmes de climatisation et de chauffage en Gironde",
