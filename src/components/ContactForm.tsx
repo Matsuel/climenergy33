@@ -15,6 +15,7 @@ interface Inputs {
 
 const sendEmail = async (data: Inputs) => {
     try {
+        toast.loading('Envoi de l\'email en cours...');
         const response = await fetch('/api/send', {
             method: 'POST',
             headers: {
@@ -22,6 +23,8 @@ const sendEmail = async (data: Inputs) => {
             },
             body: JSON.stringify(data),
         });
+
+        toast.dismiss();
 
         if (!response.ok) {
             toast.error('Erreur lors de l\'envoi de l\'email');
