@@ -29,14 +29,11 @@ const sendEmail = async (data: Inputs) => {
 
         const result = await response.json();
         if (result.success) {
-            console.log('Email sent successfully:', result);
             toast.success('Email envoyé avec succès');
         } else {
-            console.error('Error sending email:', result.error);
             toast.error('Erreur lors de l\'envoi de l\'email');
         }
-    } catch (error) {
-        console.error(error);
+    } catch {
         toast.error('Erreur lors de l\'envoi de l\'email');
     }
 }
@@ -47,14 +44,10 @@ const ContactForm = () => {
 
     const {
         register,
-        handleSubmit,
-        watch,
-        formState: { errors },
+        handleSubmit
     } = useForm<Inputs>()
 
     const onSubmit: SubmitHandler<Inputs> = (data) => sendEmail(data);
-
-    console.log(watch("firstName"))
 
     return (
         <div className="isolate bg-white px-6 lg:px-8">
